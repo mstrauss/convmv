@@ -928,11 +928,11 @@ sub map_get_newname() {
 		s/\x{f028}$/ /;  # Space, only if occurring as the last character of the name
 		s/\x{f029}$/./;  # period, only if occurring as the last character of the name
 	} elsif ($opt_map eq "ntfs-sfu") { # +0xF000, see MS KB ???? anyone knows a link or has archived an old one?
-		tr/\x01-\x1f\"\*\/\<\>\?\\\|/\x{f001}-\x{f01f}\x{f022}\x{f02a}\x{f02f}\x{f03c}\x{f03e}\x{f03f}\x{f05c}\x{f07c}/;
+		tr/\x01-\x1f\"\*\/\<\>\?\:\|/\x{f001}-\x{f01f}\x{f022}\x{f02a}\x{f02f}\x{f03c}\x{f03e}\x{f03f}\x{f03a}\x{f07c}/;
 		#??? s/ $/space/;  # Space, only if occurring as the last character of the name
 		#??? s/\.$/period/; # period, only if occurring as the last character of the name
 	} elsif ($opt_map eq "ntfs-sfu-undo") {
-		tr/\x{f001}-\x{f01f}\x{f022}\x{f02a}\x{f02f}\x{f03c}\x{f03e}\x{f03f}\x{f05c}\x{f07c}/\x01-\x1f"*\/<>?\\|/;
+		tr/\x{f001}-\x{f01f}\x{f022}\x{f02a}\x{f02f}\x{f03c}\x{f03e}\x{f03f}\x{f03a}\x{f07c}/\x01-\x1f"*\/<>?\:|/;
 		#??? s/space$/ /;  # Space, only if occurring as the last character of the name
 		#??? s/period$/./; # period, only if occurring as the last character of the name
 	} elsif ($opt_map eq "ntfs-pretty") {
